@@ -8,12 +8,12 @@
 
 목차
 
-- [GC(Garbage Collection, 가비지 컬렉션)이란?](#gc-garbage-collection-------------)
-- [GC가 garbage 여부를 판단하는 기준](#gc--garbage------------)
-  - [쓰레기 수거 프로세스 3단계!](#------------3---)
-  - [generational garbage collectors의 힙 영역 사용 전략](#generational-garbage-collectors------------)
-- [GC 종류 : Types of Garbage Collections](#gc------types-of-garbage-collections)
-- [또 다른 GC 종류 : Types of Generational Garbage Collectors](#-----gc------types-of-generational-garbage-collectors)
+- [GC(Garbage Collection, 가비지 컬렉션)이란?](#gcgarbage-collection-가비지-컬렉션이란)
+- [GC가 garbage 여부를 판단하는 기준](#gc가-garbage-여부를-판단하는-기준)
+  - [쓰레기 수거 프로세스 3단계!](#쓰레기-수거-프로세스-3단계)
+  - [generational garbage collectors의 힙 영역 사용 전략](#generational-garbage-collectors의-힙-영역-사용-전략)
+- [GC 종류 : Types of Garbage Collections](#gc-종류--types-of-garbage-collections)
+- [또 다른 GC 종류 : Types of Generational Garbage Collectors](#또-다른-gc-종류--types-of-generational-garbage-collectors)
 <hr/>
 
 ## GC(Garbage Collection, 가비지 컬렉션)이란?
