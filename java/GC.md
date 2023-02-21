@@ -2,7 +2,19 @@
 
 **updated 2023.02.21**
 
-<hr>
+- 참고 자료 : [Introduction to Garbage Collection](https://dev.java/learn/jvm/tool/garbage-collection/intro/)
+
+<hr/>
+
+목차
+
+- [GC(Garbage Collection, 가비지 컬렉션)이란?](#gc-garbage-collection-------------)
+- [GC가 garbage 여부를 판단하는 기준](#gc--garbage------------)
+  - [쓰레기 수거 프로세스 3단계!](#------------3---)
+  - [generational garbage collectors의 힙 영역 사용 전략](#generational-garbage-collectors------------)
+- [GC 종류 : Types of Garbage Collections](#gc------types-of-garbage-collections)
+- [또 다른 GC 종류 : Types of Generational Garbage Collectors](#-----gc------types-of-generational-garbage-collectors)
+<hr/>
 
 ## GC(Garbage Collection, 가비지 컬렉션)이란?
 
@@ -27,7 +39,6 @@ Java에서 말하는 GC는 JVM 내부 프로그램으로, 더이상 사용하지
   - 목적
     - 가비지 컬렉터는 개발자가 메모리 관리에 소비해야 하는 시간과 노력을 상당히 줄여줍니다. 종종 개발자는 메모리 관리를 의식적으로 고려할 필요가 없습니다.
     - 가비지 수집은 또한 **메모리 누수와 같은 문제를 제거하지는 않지만** 크게 줄이는 데 도움이 됩니다.
-  - 참고 자료 : [Introduction to Garbage Collection](https://dev.java/learn/jvm/tool/garbage-collection/intro/)
 
 <hr>
 
