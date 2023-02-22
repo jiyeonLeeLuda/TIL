@@ -1,4 +1,4 @@
-# GC
+# GC : Garbage Collection & Garbage Collector
 
 **updated 2023.02.21**
 
@@ -9,6 +9,7 @@
 목차
 
 - [GC(Garbage Collection, 가비지 컬렉션)이란?](#gcgarbage-collection-가비지-컬렉션이란)
+- [GC(Garbage Collector, 가비지 컬렉터)이란?](#gcgarbage-collector-가비지-컬렉터란)
 - [GC가 garbage 여부를 판단하는 기준](#gc가-garbage-여부를-판단하는-기준)
   - [쓰레기 수거 프로세스 3단계!](#쓰레기-수거-프로세스-3단계)
   - [generational garbage collectors의 힙 영역 사용 전략](#generational-garbage-collectors의-힙-영역-사용-전략)
@@ -18,14 +19,16 @@
 
 ## GC(Garbage Collection, 가비지 컬렉션)이란?
 
-### 요약
-
-Java에서 말하는 GC는 JVM 내부 프로그램으로, 더이상 사용하지 않는 객체에 할당된 메모리를 개발자 대신 해제 해주는 프로그램을 말한다.
-
-- Memory Managment 관점
+- Garbage Collection in Memory Managment 관점
 
   - 컴퓨터 과학에서 GC는 메모리 관리의 한 형태이다. (Java에만 GC가 있는게 아니다. 다른 언어에서도 GC는 존재한다.)
   - 더 알아보기 : [위키 : Garbage collection ](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>)
+
+## GC(Garbage Collector, 가비지 컬렉터)란?
+
+### 요약
+
+Java에서 말하는 GC는 JVM 내부 프로그램으로, 더이상 사용하지 않는 객체에 할당된 메모리를 개발자 대신 해제 해주는 프로그램을 말한다.
 
 - Java의 메모리 관리
 
