@@ -4,8 +4,8 @@
 
 참고
 
-- [인터페이스란?]("https://docs.oracle.com/javase/tutorial/java/concepts/interface.html")
-- [추상 메서드 및 클래스]("https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html")
+- [인터페이스란?](https://docs.oracle.com/javase/tutorial/java/concepts/interface.html)
+- [추상 메서드 및 클래스](https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html)
 <hr/>
 
 ## 정의
@@ -28,7 +28,7 @@
 
 - 인터페이스는 메소드의 초기 형태(추상 메소드)와 static 또는 final로 선언된 상수를 갖을 수 있었습니다. 그러나 자바8부터는, 인터페이스에서 static또는 default 형태의 메소드도 표현할수 있게 되었습니다.
 
-[Interface Enhancements In Java 8]("https://www.softwaretestinghelp.com/java-8-interface-changes/")
+[Interface Enhancements In Java 8](https://www.softwaretestinghelp.com/java-8-interface-changes/)
 
 > static and default methods 예
 
@@ -54,7 +54,7 @@ public interface DefaultStaticExampleInterface {
 
 <img src="https://4.bp.blogspot.com/-YX0MzkCeSmk/XKoREpikv2I/AAAAAAAANrQ/NHSp9JeUQiMxv4oteQwkknMz-_BdHmLNACLcBGAs/w483-h273/interfaces_vs_abstract_Class_Java.png">
 
-[Difference between Abstract class and Interface in Java 8?]("https://www.java67.com/2017/08/difference-between-abstract-class-and-interface-in-java8.html")
+[Difference between Abstract class and Interface in Java 8?](https://www.java67.com/2017/08/difference-between-abstract-class-and-interface-in-java8.html)
 
 - 공통적인 제공 기능, 상호작용 방식 -> 인터페이스
 - 공통적인 속성과 행위 -> 추상클래스
