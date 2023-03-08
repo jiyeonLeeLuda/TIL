@@ -44,6 +44,10 @@ public interface DefaultStaticExampleInterface {
 ```
 
 - default 메소드 처음보는 형태. 더 알아볼 것.
+
+  - [디폴트 메서드 설명1](https://velog.io/@heoseungyeon/%EB%94%94%ED%8F%B4%ED%8A%B8-%EB%A9%94%EC%84%9C%EB%93%9CDefault-Method)
+  - [디폴트 메서드 설명2](https://devbksheen.tistory.com/entry/%EB%94%94%ED%8F%B4%ED%8A%B8-%EB%A9%94%EC%84%9C%EB%93%9Cdefault-method%EB%9E%80)
+
 - 인터페이스에 스태틱한 메소드를 추가할 수 있게 되었다는게 무엇을 의미하나?
 
 ## 추상클래스 VS 인터페이스
