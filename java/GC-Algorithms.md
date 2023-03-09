@@ -30,7 +30,9 @@ Compacting
 
 <img src="https://developersjournal.in/wp-content/uploads/2017/09/gc-algo-mark-sweep-compact-300x165.png">
 
-> 알고리즘마크-스윕-컴팩트 알고리즘은 마크 및 스윕(조각화된 메모리)의 단점을 해결합니다. 이 알고리즘은 표시된 모든 객체를 메모리 영역의 시작 부분으로 이동합니다. 힙을 압축하는 것은 무료가 아니며 몇 가지 단점도 있습니다. 이 접근 방식은 모든 오브젝트를 새로운 위치로 복사하고 해당 오브젝트의 모든 참조를 업데이트해야 하므로 GC 일시 중지 시간이 길어집니다. 이러한 접근 방식을 사용하면 여유 공간의 위치를 항상 알 수 있으며 조각화 문제도 발생하지 않습니다.
+> Mark-Sweep-Compact algorithms solve the shortcomings of Mark and Sweep (Fragmented Memory). This algorithm moves all marked objects to the beginning of the memory region. Compacting the heap isn’t for free, it comes with some downsides also. **This approach increases the GC pause duration as we need to copy all objects to a new place and update all references of such objects.** Using such approach the location of the free space is always known and no fragmentation issues are triggered either.
+
+알고리즘마크-스윕-컴팩트 알고리즘은 마크 및 스윕(조각화된 메모리)의 단점을 해결합니다. 이 알고리즘은 표시된 모든 객체를 메모리 영역의 시작 부분으로 이동합니다. 힙을 압축하는 것은 무료가 아니며 몇 가지 단점도 있습니다. **이 접근 방식은 모든 오브젝트를 새로운 위치로 복사하고 해당 오브젝트의 모든 참조를 업데이트해야 하므로 GC 일시 중지 시간이 길어집니다.** 이러한 접근 방식을 사용하면 여유 공간의 위치를 항상 알 수 있으며 조각화 문제도 발생하지 않습니다.
 
 Copying
 
@@ -45,4 +47,10 @@ Copying
 - Mark and Copy algorithms을 수행하기 위해서 설계되었다.
 - GC는 죽은 객체를 청소하기위해 Mark, Sweep,compaction 즉, 마킹하고(삭제할 객체를 확인 및 표시) 쓸어내고(힙에서 삭제), 압축하는 (빈 공간 처리, 디스크 조각모음을 통해 큰 여유공간 확보하는 정리 작업) 3가지 작업을 한다.
 - 이 중 Mark and Copy 알고리즘은 OutOfMemoryError를 방지하기 위해 마킹과 동시에 복사를 통해 디스크 공간을 최적화 하는 작업을 수행한다.
+- Survior 영역이 하나여도, Mark-Sweep-Compact알고리즘을 사용하여 메모리 공간을 확보할 수 있지만, 이 과정에서 GC 일시 중지 시간(Stop-the-world)이 길어진다. 그러한 문제를 해결하고자 Survior 영역을 2개 두어 Mark and Copy알고리즘을 실행하여 GC 일시 중지 시간(Stop-the-world)을 최소화 하였다고 볼 수 있다.
+- 참고로 Stop-the-world가 발생할 때 가비지 컬렉터를 실행하는 쓰레드를 제외한 나머지 쓰레드는 모두 작업을 멈춘다 가비지 컬렉터 작업을 완료한 이후에 중단했던 애플리케이션 실행을 다시 시작한다.어떤 가비지 컬렉터 알고리즘을 사용하더라도 stop-the-world는 발생하며, 대개의 경우 가비지 컬렉터 튜닝이란 stop-the-world 시간을 줄이는 것이다.
+
 - 결과적으로 Survior 1 공간에 디스크 조각모음을 하면서 살아있는 객체를 안전하게 보관 하면서, servior 2 공간을 비워둠으로써 다음 GC에서 Mark and Copy가 가능하도록 준비한다. 또한 servior 한쪽 영역이 가득차 Old 영역으로 객체를 이관할 때에도 다른 한쪽이 비어있음으로 minor GC가 발생 하더라도 안전하게 쓰기 작업이 가능할 것이라 유추 된다.
+
+더 읽어보면 좋을 것
+[Naver D2 - Java Garbage Collection](https://d2.naver.com/helloworld/1329)
