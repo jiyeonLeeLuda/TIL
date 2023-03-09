@@ -5,6 +5,7 @@ Today I Learned...
 ## Java
 
 - [GC](./java/GC.md)
+- [GC Algorithms](./java/GC-Algorithms.md)
 - [JIT(Just-In-Time)](./java/JIT.md)
 - [부동소수점](./java/FloatingPoint.md)
 - [불변객체](./java/ImmutableObject.md)
