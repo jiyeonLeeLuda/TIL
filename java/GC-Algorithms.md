@@ -1,4 +1,4 @@
-# GC-YoungRegion
+# GC algorithms
 
 **updated 2023.03.09**
 참고
