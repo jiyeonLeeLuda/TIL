@@ -13,3 +13,5 @@ Today I Learned...
 - [equals vs hashcode](./java/EqualsAndHashcode.md)
 
 - [Big-O notation](./java/BigO.md)
+- [StringBuilder vs StringBuffer](./java/StringBuilderVsStringBuffer.md)
+- [HashMap vs HashTable](./java/HashMapVsHashTable.md)
