@@ -71,6 +71,9 @@ Java 2 플랫폼 v1.2부터 이 클래스는 Map 인터페이스를 구현하도
 
 ### 더 찾고 싶은 것
 
-- ConcurrentModificationException
+- highly-concurrent 란?
+- ConcurrentModificationException 이란?
+- ConcurrentHashMap 이란?
 - associate array (대표적으로 Map, Dictionary, Symbol Table 등)
-- String 의 hashcode(32비트 정수 자료형) 메소드의 한계
+- 왜 Java에서는 dicionary는 더이상 사용안하고 map을 구현하라고 할까?
+- 해시맵의 해시충돌과 관련하여 - String 의 hashcode(32비트 정수 자료형) 메소드의 한계
