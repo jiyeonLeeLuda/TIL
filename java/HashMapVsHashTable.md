@@ -77,3 +77,23 @@ Java 2 플랫폼 v1.2부터 이 클래스는 Map 인터페이스를 구현하도
 - associate array (대표적으로 Map, Dictionary, Symbol Table 등)
 - 왜 Java에서는 dicionary는 더이상 사용안하고 map을 구현하라고 할까?
 - 해시맵의 해시충돌과 관련하여 - String 의 hashcode(32비트 정수 자료형) 메소드의 한계
+
+### 해시맵의 해시충돌과 관련하여 - String 의 hashcode 메소드의 한계
+
+- 참고자료 [Java HashMap은 어떻게 동작하는가?](https://d2.naver.com/helloworld/831311)
+
+#### 해시 분포와 해시 충돌
+
+> 동일하지 않은 어떤 객체 X와 Y가 있을 때, 즉 X.equals(Y)가 '거짓'일 때 X.hashCode() != Y.hashCode()가 같지 않다면, 이때 사용하는 해시 함수는 완전한 해시 함수(perfect hash functions)라고 한다.
+
+> Boolean같이 서로 구별되는 객체의 종류가 적거나, Integer, Long, Double 같은 Number 객체는 객체가 나타내려는 값 자체를 해시 값으로 사용할 수 있기 때문에 완전한 해시 함수 대상으로 삼을 수 있다.
+
+> 하지만 String이나 POJO(plain old java object)에 대하여 완전한 해시 함수를 제작하는 것은 사실상 불가능하다.
+
+> HashMap은 기본적으로 각 객체의 hashCode() 메서드가 반환하는 값을 사용하는 데, 결과 자료형은 int다. 32비트 정수 자료형으로는 완전한 자료 해시 함수를 만들 수 없다. 논리적으로 생성 가능한 객체의 수가 2^32보다 많을 수 있기 때문이며, 또한 모든 HashMap 객체에서 O(1)을 보장하기 위해 랜덤 접근이 가능하게 하려면 원소가 2^32인 배열을 모든 HashMap이 가지고 있어야 하기 때문이다.
+
+> 따라서 HashMap을 비롯한 많은 해시 함수를 이용하는 associative array 구현체에서는 메모리를 절약하기 위하여 실제 해시 함수의 표현 정수 범위 N보다 작은 M개의 원소가 있는 배열만을 사용한다. 따라서 다음과 같이 객체에 대한 해시 코드의 나머지 값을 해시 버킷 인덱스 값으로 사용한다.
+
+- 더 읽을 거리
+
+  - [Java HashMap은 어떻게 동작하는가?](https://d2.naver.com/helloworld/831311)
