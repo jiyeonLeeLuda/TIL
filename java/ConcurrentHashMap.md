@@ -77,4 +77,18 @@ putAll 및 clear와 같은 집계 작업의 경우 동시 검색은 일부 항�
 
 이터레이터와 분할기/열거자는 ConcurrentModificationException을 던지지 않습니다. 그러나 이터레이터는 한 번에 하나의 스레드에서만 사용하도록 설계되었습니다. size, isEmpty, containsValue를 포함한 상태 집계 메서드의 결과는 일반적으로 맵이 다른 스레드에서 동시에 업데이트되지 않는 경우에만 유용하다는 점을 유념하세요. 그렇지 않으면 이러한 메서드의 결과는 모니터링 또는 추정 목적에는 적합할 수 있지만 프로그램 제어에는 적합하지 않은 일시적인 상태를 반영합니다.
 
-ㅊㅊ차모
+### [ConcurrentModificationException](https://docs.oracle.com/javase/8/docs/api/java/util/ConcurrentModificationException.html)이란?
+
+- 동시-수정 예외 : 이 예외는 객체의 동시 수정을 감지한 메서드에서 해당 수정이 허용되지 않는 경우 발생할 수 있습니다.
+- ConcurrentModificationException는 보통 리스트나 Map 등, Iterable 객체를 순회하면서 요소를 삭제하거나 변경을 할 때 발생합니다.
+
+참고 [Java - ConcurrentModificationException 원인 및 해결 방법](https://codechacha.com/ko/java-concurrentmodificationexception/)
+
+### 더 읽을거리
+
+- [Important points about Thread-Safety in Java](https://gowthamy.medium.com/concurrent-programming-fundamentals-thread-safety-6b44c026bd2a)
+
+- [Java concurrency (multi-threading) - Tutorial](https://www.vogella.com/tutorials/JavaConcurrency/article.html)
+
+- [동시성이 높은 애플리케이션을 위한 설계 원칙 및 패턴
+  ](https://www.baeldung.com/concurrency-principles-patterns)
