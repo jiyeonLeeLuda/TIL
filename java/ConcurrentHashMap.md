@@ -90,5 +90,4 @@ putAll 및 clear와 같은 집계 작업의 경우 동시 검색은 일부 항�
 
 - [Java concurrency (multi-threading) - Tutorial](https://www.vogella.com/tutorials/JavaConcurrency/article.html)
 
-- [동시성이 높은 애플리케이션을 위한 설계 원칙 및 패턴
-  ](https://www.baeldung.com/concurrency-principles-patterns)
+- [동시성이 높은 애플리케이션을 위한 설계 원칙 및 패턴](https://www.baeldung.com/concurrency-principles-patterns)
