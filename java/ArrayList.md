@@ -116,7 +116,7 @@
 
   - 그리고 elementData = Arrays.copyOf(elementData, newCapacity); 코드를 처럼 새 배열에 기존데이터를 복사해 덮어씌운다.
 
-### arrayList add메도스 사용시 주의 할 점
+### arrayList add메소스 사용시 주의 할 점
 
 > 즉, grow는 elementData가 부족할 때마다 1.5배 사이즈를 갖는 배열을 생성해 값을 복사하는 작업을 한다.
 
