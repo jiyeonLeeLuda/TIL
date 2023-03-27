@@ -97,3 +97,21 @@ Java 2 플랫폼 v1.2부터 이 클래스는 Map 인터페이스를 구현하도
 - 더 읽을 거리
 
   - [Java HashMap은 어떻게 동작하는가?](https://d2.naver.com/helloworld/831311)
+
+## 추가 HashMap 은 어떻게 구현되어있길래 키와 값을 빠르게 매핑할 수 있을까요?
+
+나의 답변
+
+- 키값을 통해 값을 저장하는 버킷 인덱스 값을 알아낼 수 있기 때문에 배열에서 인덱스로 값을 꺼내 듯이 O(1) 값을 빠르게 맵핑 할 수 있습니다.
+- 단, 다른 키값이 동일한 버킷 인덱스를 갖는 경우 해시 충돌이 발생했다고 하는데, 이 경우 버킷 셀 안에 목록이 저장되어 equals 함수를 통해 키를 비교해서 값을 찾아 내야 합니다. 목록을 순회 함으로 최악의 경우 O(n) 으로 값을 찾는데 시간이 더 소요 될 수 있습니다.
+
+### hash load factor 는 무엇일까요?
+
+- load factor를 직역하면 부하율이라 하는데, 해시맵의 버킷 입장에서는 적제율이라고도 할 수 있을것 같습니다.
+- hash load factor는 hash map의 버킷에 데이터를 저장(적제)할 수 있는 적정비율을 말하며, 기본값은 0.75 (75%) 입니다. 이 값을 초과하면 hash map은 버킷수를 2배로 늘립니다.
+
+- 참고 [HashMap 은 어떻게 구현되어있길래 키와 값을 빠르게 매핑할 수 있을까?](https://velog.io/@dailyzett/HashMap)
+
+- 참고 [HashTable 및 HashMap 키-값은 메모리에 어떻게 저장됩니까?](https://stackoverflow.com/questions/10894558/how-hashtable-and-hashmap-key-value-are-stored-in-the-memory)
+
+- 참고 [What makes hashmaps faster?](https://stackoverflow.com/questions/41412011/what-makes-hashmaps-faster)
