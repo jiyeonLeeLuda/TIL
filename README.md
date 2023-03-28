@@ -23,3 +23,5 @@ Today I Learned...
 
 - [ArrayList](./java/ArrayList.md)
 - [ArrayList vs LinkedList](./java/ArrayListVsLinkedList.md)
+
+- [Stream](./java/Stream.md)
