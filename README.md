@@ -29,3 +29,4 @@ Today I Learned...
 ## Web
 
 - [Keep alive](./web/KeepAlive.md)
+- [Status Code](./web/StatusCode.md)
