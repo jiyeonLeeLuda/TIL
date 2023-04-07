@@ -1,6 +1,6 @@
 # HashMap VS HashTable
 
-**updated 2023.03.15**
+**updated 2023.04.07 /2023.03.15**
 
 <hr/>
 
@@ -115,3 +115,58 @@ Java 2 플랫폼 v1.2부터 이 클래스는 Map 인터페이스를 구현하도
 - 참고 [HashTable 및 HashMap 키-값은 메모리에 어떻게 저장됩니까?](https://stackoverflow.com/questions/10894558/how-hashtable-and-hashmap-key-value-are-stored-in-the-memory)
 
 - 참고 [What makes hashmaps faster?](https://stackoverflow.com/questions/41412011/what-makes-hashmaps-faster)
+
+## Hash 충돌
+
+### 해시 충돌이란 ?
+
+- 해시 함수란 ? 데이터를 효율적으로 관리하기 위해 임의의 길이의 데이터를 수학적 연산을 통해 고정된 길이의 데이터로 매핑하는 함수이다. 해시 함수에 의해 얻어지는 값을 해시 코드, 해시라고 한다.
+
+- 해시 충돌이란 ? 두 개의 다른 key가 동일한 hash 값을 갖는 경우 "충돌이 발생했다"라고 한다.
+
+- 충돌 문제를 해결하기 위한 방법으로는 대표적으로 Chaining과 Open Addressing 이 두가지 방법이 있다.
+
+### 어떻게 해시 충돌을 해결할 수 있나?
+
+#### Chaining
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hash_table_5_0_1_1_1_1_1_LL.svg/450px-Hash_table_5_0_1_1_1_1_1_LL.svg.png"/>
+- 충돌시 해당 키 의 버킷에, Linked-List로 값들을 연결(Chaining)하여 저장한다.
+  - 삭제 또는 삽입이 간단한 반면, 데이터 조회시 최악의 경우 수행시간이 O(n)이 될 수 있다.
+- 이에 대한 대안으로, Tree구조(Red-Black Tree)를 이용하여 시간 복잡도를 줄이는 선택을 하기도 한다.
+  - 단 이경우, 메모리 사용량이 많은 것이 단점.
+
+#### Open Addressing
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Hash_table_5_0_1_1_1_1_0_SP.svg/380px-Hash_table_5_0_1_1_1_1_0_SP.svg.png"/>
+
+- 충돌 발생 시 해시함수로 얻은 주소가 아닌 다른 주소 버킷에 데이터를 저장한다.
+- Open Addressing 방법은 3가지 종류가 있다.
+
+  1. 선형 탐색 (Linear probing)
+
+  - 충돌이 발생할 경우 다음 버킷에 저장하는 방법 (빈 slot이 나올 때까지 탐색 후, 빈 slot이 나오면 위치가 결정된다.)
+  - 구현은 매우 쉬우나, 한 번 충돌이 나면 집중적으로 충돌이 발생한다(primary clustering). 이로 인하여 평균 검색 시간이 증가한다.
+
+  2. 제곱 탐색 (Quadratic probing)
+
+  - 해시 충돌시 제곱만큼 건너뛴 버킷에 데이터를 저장하는 방법
+  - 선형 탐색에 비해 충돌이 적지만 secondary clustering, 즉 처음 충돌한 위치가 같다면 다음 충돌할 위치도 반복적으로 계속 충돌이 나게 된다.
+
+  3. 이중 해시 (Double hasing)
+
+  - 해시 충돌시 다른 해시함수를 한 번더 적용한 결과를 저장
+
+### 자바에서의 해시충돌은 어떻게 해결하나?
+
+- Separate Chaining을 사용한다.
+
+  - 자바 8버전 이후 부터는 , Linked-List의 길이가 8이상이면, Tree(Red-Black Tree)로 구현하여 시간복잡도를 낮춘다.
+  - 추가로 보조 해시 함수를 이용하여 키값을 변형하는 방법으로 해시 충돌의 가능성을 줄이고 있다.
+    - 1.4에 처음등장 하였으며, Java5~7까진 동일한 방법을, [Java8에서 새로운 방식의 보조 해시 함수를 사용](https://d2.naver.com/helloworld/831311)하고 있다고 한다.
+
+- 참고
+  - [Java HashMap은 어떻게 동작하는가?](https://demoversion.tistory.com/84)
+  - [해시 함수와 해시 충돌(해결 방법)](https://umanking.github.io/2022/06/23/hash-function/)
+  - [Hash Collision, 해시 충돌시 해결방법](https://javannspring.tistory.com/238)
+  - [해시(Hash)와 해시 충돌 해결 방법](https://ryu-e.tistory.com/m/87)
