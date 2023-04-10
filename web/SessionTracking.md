@@ -17,6 +17,7 @@ Scale Out으로 서버를 확장할 때, 다중 서버 환경에서 생길 수 �
 ## 해결방법
 
 1. Sticky Session
+
    <img src="https://hudi.blog/static/49d599e8110f844dea2d5fe64cd172b1/ca1dc/sticky-session.png"/>
 
    - Sticky Session은 이름 처럼 세션과 세션을 맺은 서버가 달라붙어있는 상태라 생각할 수 있다. 즉 클라이언트의 요청이 항상 해당 클라이언트와 세션을 맺은 서버로 전달되는 방식이다.
@@ -32,6 +33,7 @@ Scale Out으로 서버를 확장할 때, 다중 서버 환경에서 생길 수 �
      - 하나의 서버에 장애가 발생하면, 해당 서버에 저장된 세션 정보를 모두 잃게 된다. 이 경우 사용자는 재 로그인을 해야 한다. 이는 가용성의 문제를 뜻한다.
 
 2. Session Clustering
+
    <img src="https://hudi.blog/static/f94df6ab4c0ec0175d307d03d5f475f6/44038/session-clustering.png"/>
 
    - Session Clustering이란 세션의 군집화(여러개가 무리지음)란 의미에서 동일한 내용의 세션이 동시에 여러개 생성(각 서버에 세션이 생성)된다고 이해할 수 있다.
@@ -47,6 +49,7 @@ Scale Out으로 서버를 확장할 때, 다중 서버 환경에서 생길 수 �
      - 또한 세션을 전달받고 복제하는 동안의 시간차로 인해 세션 불일치 이슈가 발생할 가능성이 있다. (예를 들어 A서버에서 생성된 세션이 B서버로는 전파가 되었지만, 아직 C서버로 전파가 되지 않았을 찰나에 클라이언트가 C서버로 요청할 수도 있는 것 이다.)
 
 3. 세션 스토리지 분리 (Session Server, DB등을 활용)
+
    <img src="https://hudi.blog/static/802d972eb644eca74848421de0b51696/9e707/session-storage.png"/>
 
    - 세션스토리지를 외부 서버로 분리하는 방식이다.
