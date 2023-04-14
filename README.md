@@ -34,3 +34,8 @@ Today I Learned...
   - [Oauth 2.0](./web/Oauth2.0.md)
 - [쿠키와 세션](./web/CookieAndSession.md)
   - [세션 불일치 현상 해결방법](./web/SessionTracking.md)
+
+## Project
+
+- 기술 선정
+  - [Java, Spring boot](./project/JavaAndSpringBoot.md)
