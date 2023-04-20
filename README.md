@@ -37,6 +37,7 @@ Today I Learned...
 
 ## Project
 
-- 기술 선정
+- 기술 선정 및 인프라
   - [Java, Spring boot](./project/JavaAndSpringBoot.md)
   - [DB](./project/DBMS.md)
+  - [CICD](./project/CICD.md)
