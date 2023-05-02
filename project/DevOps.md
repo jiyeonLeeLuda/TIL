@@ -1,6 +1,6 @@
 # DevOps
 
-**updated 2023.04.20**
+**updated 2023.05.02, 2023.04.20**
 
 - DevOps ?
 - SRE ?
