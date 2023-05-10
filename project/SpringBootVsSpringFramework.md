@@ -49,3 +49,8 @@ over view...
 처음 SpringFramework를 배우고 입문하기에는 SpringBoot가 도움이 될 것 같다.
 
 다만 SpringFramework의 구성요소 하나하나 공부하면서 알아가고 싶다면, 시간이 걸리더라도 순정 버전으로 작업하는 것도 좋은 방법이 될 것 같다.
+
+참고자료
+
+- [Spring 공홈](https://spring.io/)
+- [Spring vs Spring Boot: Know The Difference](https://www.interviewbit.com/blog/spring-vs-spring-boot/)
