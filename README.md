@@ -41,6 +41,7 @@ Today I Learned...
 - 기술 선정 및 인프라
   - [Java, Spring boot](./project/JavaAndSpringBoot.md)
     - [Spring Boot VS Spring Framework](./project/SpringBootVsSpringFramework.md)
+    - [Spring Boot Auto Configuration](./project/SpringBootAutoConfiguration.md)
   - [DB](./project/DBMS.md)
   - [CICD](./project/CICD.md)
   - [DevOps](./project/DevOps.md)
